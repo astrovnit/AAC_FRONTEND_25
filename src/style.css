@@ -1,0 +1,164 @@
+@tailwind base; 
+@tailwind components;
+@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Serif", serif !important;
+}
+
+
+.readable {
+  font-size: 25px;
+}
+
+.big {
+  font-size: 4vh;
+}
+
+.blog-bg {
+  background-image: url(../public/cubes2.png);
+}
+
+.card {
+  width: 360px;
+  height: 416px;
+  padding: 60px 30px;
+  margin: 20px;
+  background: black;
+  box-shadow: 0.3em 0.3em 0.6em #1a1a1a, -0.5em -0.5em 1em #333333; 
+  transition: 0.5s;
+  /* box-shadow: 0.3em 0.3em 0.6em #d2dce9, -0.5em -0.5em 1em #ffffff; */
+    
+ }
+
+.imgBx {
+  transition: transform 0.5s;
+}
+.card{
+  background: linear-gradient(90deg, black 50%, #1a1a1a 50%); 
+  transition: 0.5s;
+}
+.card:hover .imgBx {
+  border-radius: 50px;
+  transform: scale(1.2);
+}
+.card .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+.card .content .imgBx {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  margin-bottom: 20px;
+  display: inline-block;
+  overflow: hidden;
+}
+.card .content .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+}
+.card .content .contentBx h4 {
+  color: #36187d;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.card .content .contentBx h5 {
+  color: #819ef5;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+}
+.card .content .sci {
+  margin-top: 50px;
+}
+.card .content .sci ul {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+}
+
+.card .content .sci ul li {
+  list-style: none;
+  margin: 0 10px;
+}
+.card .content .sci ul li .fa {
+  color: #000000;
+  font-size: 25px;
+  line-height: 50px;
+  transition: 0.5s;
+}
+.card .content .sci ul li .fa:hover {
+  color: #da2f2f;
+}
+.card .content .sci a {
+  text-decoration: none;
+  color: #0196e3;
+  font-size: 30px;
+  margin: 10px;
+  transition: color 0.4s;
+}
+.card .content .sci a:hover {
+  color: #6c758f;
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+nav.text-white {
+  color: white !important;
+} 
+.footer {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  margin-top: 0;
+  background-color: black;
+} 
+ 
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: black; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #333; /* Color when hovered */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color of the scrollbar track */
+  border-radius: 10px;
+}
+
+
+
+
