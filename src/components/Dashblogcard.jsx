@@ -3,7 +3,6 @@ import { Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Badge } from "@chakra-ui/react";
-import BASE_URL from "../URL";
 
 const Dashblogcard = (props) => {
   let width = window.innerWidth;

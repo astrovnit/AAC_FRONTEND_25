@@ -36,7 +36,7 @@ function App() {
       return;
     } else {
       axios
-        .get(`{BASE_URL}/user/getUserInfo`, {
+        .get(`${BASE_URL}/user/getUserInfo`, {
           params: {
             token: cookies.get("authToken"),
           },
