@@ -14,7 +14,7 @@ import About from "./pages/About";
 import Signup from "./pages/Signup";
 import Editblog from "./pages/Editblog";
 import Cookies from "universal-cookie";
-
+import BASE_URL from "./URL";
 import Resources from "./pages/Resources";
 function App() {
   const cookies = new Cookies();
@@ -36,7 +36,7 @@ function App() {
       return;
     } else {
       axios
-        .get("https://aac-backend-25.onrender.com/user/getUserInfo", {
+        .get(`{BASE_URL}/user/getUserInfo`, {
           params: {
             token: cookies.get("authToken"),
           },

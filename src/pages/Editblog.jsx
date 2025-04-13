@@ -4,6 +4,8 @@ import { Button } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import BASE_URL from "../URL";
+
 function Editblog(props) {
   const { id } = useParams();
   const [submit, setSubmit] = useState(false);
@@ -25,7 +27,7 @@ function Editblog(props) {
   useEffect(() => {
     if (data === "") {
       axios
-        .get("https://aac-backend-25.onrender.com/blog/getBlogData", {
+        .get(`${BASE_URL}/blog/getBlogData`, {
           params: {
             id: id,
             token: props.token,
@@ -86,7 +88,7 @@ function Editblog(props) {
         token: props.token,
       };
       axios
-        .post("https://aac-backend-25.onrender.com/blog/updateBlog",{
+        .post(`${BASE_URL}/blog/updateBlog`,{
           params: newBlog,
         })
         .then((res) => {

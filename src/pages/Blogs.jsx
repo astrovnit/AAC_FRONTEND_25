@@ -3,13 +3,15 @@ import Navbar from "../components/Navbar";
 import Blogcard from "../components/Blogcard";
 import axios from "axios";
 import { Spinner } from "@chakra-ui/react";
+import BASE_URL from "../URL";
+
 function Blogs(props) {
   const [data, setData] = useState(null);
   const [callCount, setCallCount] = useState(0);
 
   useEffect(() => {
     if (callCount === 0) {
-      axios.get("https://aac-backend-25.onrender.com/blog/blogs").then((res) => {
+      axios.get(`${BASE_URL}/blog/blogs`).then((res) => {
         setData(() => {
           let temp = res.data.data;
           temp.reverse();

@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Spinner } from "@chakra-ui/react";
+import BASE_URL from "../URL";
 
 function Myblogs(props) {
   const [data, setData] = useState(null);
@@ -16,7 +17,7 @@ function Myblogs(props) {
     }
     if (callCount === 0) {
       axios
-          .get("https://aac-backend-25.onrender.com/user/myblogs", {
+          .get(`${BASE_URL}/user/myblogs`, {
             params: { userid: props.user._id, token: props.token },
           })
           .then((res) => {

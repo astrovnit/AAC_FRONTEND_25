@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import { Skeleton } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-
+import BASE_URL from "../URL";
 function Showblog(props) {
     const { id } = useParams();
     const [data, setData] = useState("");
@@ -11,7 +11,7 @@ function Showblog(props) {
     useEffect(() => {
         if (data === "") {
             axios
-                .get("https://aac-backend-25.onrender.com/blog/getData", {
+                .get(`${BASE_URL}/blog/getData`, {
                     params: {
                         id: id,
                     },

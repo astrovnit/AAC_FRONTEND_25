@@ -4,6 +4,7 @@ import { Button, Tooltip, useToast } from "@chakra-ui/react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
+import BASE_URL from "../URL";
 
 // Modular InputField Component for login and reset forms
 const InputField = ({ id, label, type, onChange, isRequired, tooltip }) => (
@@ -105,7 +106,7 @@ function Login(props) {
     }
     setSubmit(true);
     axios
-        .post("https://aac-backend-25.onrender.com/user/login", {
+        .post(`${BASE_URL}/user/login`, {
           username,
           password,
         })
@@ -136,7 +137,7 @@ function Login(props) {
     }
     setSubmit(true);
     axios
-        .post("https://aac-backend-25.onrender.com/user/resetPassword", {
+        .post(`${BASE_URL}/user/resetPassword`, {
           username: musername,
           enrollment: menrollment,
           password: mpassword,

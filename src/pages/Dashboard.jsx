@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Spinner, useToast } from "@chakra-ui/react";
 import Blogcard from "../components/Blogcard";
+import BASE_URL from "../URL";
 function Dashboard(props) {
   const [message, setMessage] = useState(-1);
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ function Dashboard(props) {
   useEffect(() => {
     if (callCount === 0) {
       axios
-        .get("https://aac-backend-25.onrender.com/admin/pending", {
+        .get(`${BASE_URL}/admin/pending`, {
           params: {
             token: props.token,
           },

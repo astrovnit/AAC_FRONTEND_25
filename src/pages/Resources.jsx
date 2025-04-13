@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import ResourceCard from "../components/Resourcecard";
 import axios from "axios";
 import { Spinner } from "@chakra-ui/react";
+import BASE_URL from "../URL";
 
 function Resources(props) {
   const [data, setData] = useState(null);
@@ -10,7 +11,7 @@ function Resources(props) {
 
   useEffect(() => {
     if (callCount === 0) {
-      axios.get("https://aac-backend-25.onrender.com/resource/getResources").then((res) => {
+      axios.get(`${BASE_URL}/resource/getResources`).then((res) => {
         setData(() => {
           let temp = res.data.data;
           temp.reverse();

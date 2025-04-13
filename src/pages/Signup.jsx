@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import { Button, Tooltip, useToast } from "@chakra-ui/react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import BASE_URL from "../URL";
 // Modular InputField Component
 const InputField = ({ id, label, type, onChange, isRequired, tooltip }) => (
     <div className="mb-4">
@@ -90,7 +90,7 @@ function Signup(props) {
     setSubmit(true);
 
     axios
-        .post("https://aac-backend-25.onrender.com/user/register", {
+        .post(`${BASE_URL}/user/register`, {
           name,
           username,
           enrollment,

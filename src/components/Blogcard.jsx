@@ -4,7 +4,7 @@ import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { Badge } from "@chakra-ui/react";
-
+import BASE_URL from "../URL";
 const Blogcard = (props) => {
   const width = window.innerWidth;
   const address = "/showblog/" + props.data._id;
@@ -20,7 +20,7 @@ const Blogcard = (props) => {
   const handleApprove = () => {
     setSubmit(true);
     axios
-        .post("https://aac-backend-25.onrender.com/admin/approve", {
+        .post(`${BASE_URL}/admin/approve`, {
           id: props.data._id,
           message: usermessage,
           token: props.token,
@@ -36,7 +36,7 @@ const Blogcard = (props) => {
   const handleReject = () => {
     setSubmit(true);
     axios
-        .post("https://aac-backend-25.onrender.com/admin/reject", {
+        .post(`${BASE_URL}/admin/reject`, {
           id: props.data._id,
           message: usermessage,
           token: props.token,
@@ -52,7 +52,7 @@ const Blogcard = (props) => {
   const handleDelete = () => {
     setSubmit(true);
     axios
-        .post("https://aac-backend-25.onrender.com/admin/delete", {
+        .post(`${BASE_URL}/admin/delete`, {
           id: props.data._id,
           token: props.token,
         })

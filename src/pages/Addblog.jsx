@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import { Button } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import BASE_URL from "../URL";
 function Addblog(props) {
   const [message, setMessage] = useState(-1);
   const [name, setName] = useState("");
@@ -61,7 +61,7 @@ function Addblog(props) {
         token: props.token,
       };
       axios
-          .post("https://aac-backend-25.onrender.com/blog/postblog", {
+          .post(`${BASE_URL}/blog/postblog`, {
             params: newBlog,
           })
           .then((res) => {
